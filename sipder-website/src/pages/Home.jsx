@@ -35,14 +35,22 @@ const Home = () => {
       {/* <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white py-6 px-6"> */}
       <div className="flex flex-col md:flex-row items-center justify-center min-h-0 text-white py-6 px-6 gap-10">
         <div>
-          <motion.h1
+          {/* <motion.h1
             className="text-8xl font-bold font-mono text-gray-300 text-center max-w-2xl mb-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             SIPDER
-          </motion.h1>
+          </motion.h1> */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="w-full mask-y-from-10% mask-y-to-95% "
+          >
+            <img src="../imgs/SIPDERLogo_V1_transparent.png" />
+          </motion.div>
           <motion.p
             className="text-lg text-gray-300 text-center max-w-2xl mb-6"
             initial={{ opacity: 0 }}
@@ -60,17 +68,23 @@ const Home = () => {
               Get Started
             </button>
           </motion.div>
-          <CardContent />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+          >
+            <CardContent />
+          </motion.div>
         </div>
         <div>
-          <motion.div
+          <motion.img
+            src="../imgs/IMG_7731.JPG"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="w-full mask-y-from-20% mask-y-to-90% "
-          >
-            <img src="../public/imgs/SIPDERLogo_V1_transparent.png" />
-          </motion.div>
+            className="w-200"
+          />
+          {/* <img src="../imgs/SIPDERLogo_V1_transparent.png" /> */}
         </div>
       </div>
 
@@ -86,17 +100,16 @@ const Home = () => {
             <AboutPage />
           </motion.section>
         </div>
-        <div>
-          <motion.img
-            src="../imgs/IMG_7731.JPG"
-            alt="Substation"
-            ref={sectionRef}
-            className="py-4"
-            initial={{ opacity: 0 }}
-            animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 1 }}
-          />
-        </div>
+        {/* <div>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="w-full mask-y-from-20% mask-y-to-90% "
+          >
+            <img src="../imgs/SIPDERLogo_V1_transparent.png" />
+          </motion.div>
+        </div> */}
       </div>
     </>
   );

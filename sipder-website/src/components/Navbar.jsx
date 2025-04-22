@@ -22,9 +22,11 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-6 flex justify-between items-center">
           <ul className="flex space-x-4">
             <li>
-              {/* <Link to="/about" className="block py-2 px-6 border-b hover:text-blue-500">
-                About
-              </Link> */}
+              <Link to="/" className="block py-2 px-6 border-b hover:text-blue-500">
+                Home
+              </Link>
+            </li>
+            <li>
               <a
                 href="#about"
                 onClick={(e) => {

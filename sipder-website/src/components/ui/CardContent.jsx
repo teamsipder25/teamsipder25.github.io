@@ -2,9 +2,19 @@ import Card from "./Card";
 
 const CardContent = () => {
   const features = [
-    { title: "Fast Performance", description: "Optimized for speed and efficiency." },
-    { title: "Modern UI", description: "Sleek and responsive design with Tailwind CSS." },
-    { title: "Interactive Animations", description: "Smooth interactions with Framer Motion." },
+    {
+      title: "Autonomous Inspection",
+      description:
+        "Autonomously navigation in substations, reducing the need for human intervention in high-risk zones.",
+    },
+    {
+      title: "Partial Discharge Detection",
+      description: "Equipped with sensors to detect partial discharges.",
+    },
+    {
+      title: "User Friendly Interface",
+      description: "Intuitive and user-friendly interface with the robotic system.",
+    },
   ];
 
   return (
