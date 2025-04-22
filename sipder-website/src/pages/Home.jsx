@@ -88,7 +88,7 @@ const Home = () => {
         </div>
         <div>
           <motion.img
-            src="../public/imgs/IMG_7731.JPG"
+            src="../imgs/IMG_7731.JPG"
             alt="Substation"
             ref={sectionRef}
             className="py-4"
