@@ -67,9 +67,9 @@ const Home = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="w-90% mask-y-from-20% mask-y-to-90% "
+            className="w-full mask-y-from-20% mask-y-to-90% "
           >
-            <img src="../public/imgs/SIPDERLogo_V1.png" />
+            <img src="../public/imgs/SIPDERLogo_V1_transparent.png" />
           </motion.div>
         </div>
       </div>

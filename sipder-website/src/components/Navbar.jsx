@@ -14,8 +14,8 @@ const Navbar = () => {
     <nav className="relative flex justify-between items-center">
       <div className="container mx-auto px-6 py-4 relative flex justify-between items-center">
         {/* Logo */}
-        <a href="/" class="avatar w-24 rounded">
-          <img src="../public/imgs/SIPDERLogo_V1.png" />
+        <a href="/" class="avatar w-40 rounded">
+          <img src="../public/imgs/SIPDERLogo_V1_transparent.png" />
         </a>
 
         {/* Desktop Menu */}
