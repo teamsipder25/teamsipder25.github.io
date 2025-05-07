@@ -14,7 +14,7 @@ const Footer = () => {
         </a>
       </aside>
 
-      <nav>
+      {/* <nav>
         <h6 className="footer-title">Pages</h6>
         <a className="link link-hover" href="/">
           Home
@@ -22,7 +22,7 @@ const Footer = () => {
         <a className="link link-hover" href="/team">
           Team
         </a>
-      </nav>
+      </nav> */}
 
       <nav>
         <h6 className="footer-title">Contact</h6>

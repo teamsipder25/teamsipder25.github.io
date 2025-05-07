@@ -62,17 +62,30 @@ const Navbar = () => {
               </motion.a>
             </li>
             <li>
-            <motion.div
+              <motion.div
                 whileHover={{
                   scale: 1.2,
                   transition: { duration: 1 },
                 }}
                 whileTap={{ scale: 0.9 }}
               >
-              <Link to="/team" className="block py-2 px-6 border-b hover:text-blue-500">
-                Team
-              </Link>
-            </motion.div>
+                <Link to="/team" className="block py-2 px-6 border-b hover:text-blue-500">
+                  Team
+                </Link>
+              </motion.div>
+            </li>
+            <li>
+              <motion.div
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 1 },
+                }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Link to="/demo" className="block py-2 px-6 border-b hover:text-blue-500">
+                  Demo Video
+                </Link>
+              </motion.div>
             </li>
           </ul>
         </div>
@@ -118,9 +131,9 @@ const Navbar = () => {
           <Link to="/team" className="block py-1 px-6 border-b" onClick={toggleMenu}>
             Team
           </Link>
-          {/* <Link to="/services" className="block py-1 px-6 border-b" onClick={toggleMenu}>
-            Services
-          </Link> */}
+          <Link to="/demo" className="block py-1 px-6 border-b" onClick={toggleMenu}>
+            Demo Video
+          </Link>
           {/* <Link to="/contact" className="block py-1 px-6" onClick={toggleMenu}>
             Contact
           </Link> */}

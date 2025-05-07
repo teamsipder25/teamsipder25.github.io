@@ -10,6 +10,7 @@ import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import TeamPage from "./pages/TeamPage";
 import Footer from "./components/Footer";
+import FullDemoPage from "./pages/FullDemoPage";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/team" element={<TeamPage />} />
+          <Route path="/demo" element={<FullDemoPage />} />
         </Routes>
       </AnimatePresence>
 
