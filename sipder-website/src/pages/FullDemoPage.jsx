@@ -8,17 +8,21 @@ const FullDemoPage = () => {
         Watch our robotic inspection workflow in action—from sensor alignment and AprilTag detection
         to torque sensing and data capture.
       </p>
+      <p>If you are watching on your phone, we reccommend watching in full screen.</p>
 
-      <div className="w-full max-w-5xl mb-10 shadow-xl rounded-xl overflow-hidden">
-        {/* Replace this <video> or <img> with your actual demo */}
-        <video className="w-full h-auto" controls>
-          <source src="/videos/sped-final-demo-1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        {/* Or use a GIF:
-        <img src="/imgs/full-demo.gif" alt="Full System Demo" className="w-full h-auto" /> 
-        */}
-      </div>
+      {/* <div className="w-full max-w-5xl mb-10 shadow-xl rounded-xl overflow-hidden"> */}
+      {/* Replace this <video> or <img> with your actual demo */}
+      <iframe
+        // width="560"
+        height="500"
+        className="w-full max-w-5xl mb-10 mt-10 shadow-xl rounded-xl overflow-hidden"
+        src="https://www.youtube.com/embed/GZs9UTu9Jr8?si=2qzNZQJwqjGPl20x"
+        title="YouTube video player"
+        frameborder="0"
+        allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
         <FeatureCard
