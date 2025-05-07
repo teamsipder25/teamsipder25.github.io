@@ -73,7 +73,7 @@ const Home = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="w-full mask-y-from-10% mask-y-to-95% "
           >
-            <img src="../imgs/SIPDERLogo_V1_transparent.png" />
+            <img src="../imgs/SIPDERLogo_V1_transparent_letter.png" />
           </motion.div>
           <motion.p
             className="text-2xl font-bold text-gray-300 text-center max-w-2xl mt-4 mb-6"

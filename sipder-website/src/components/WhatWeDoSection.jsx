@@ -14,7 +14,7 @@ const WhatWeDoSection = () => {
               className="object-cover w-full h-full"
             />
           </figure>
-          <div className="card-body">
+          <div className="card-body items-center text-center">
             <h2 className="card-title">
               Robust Sensor End-Effector Design
               {/* <div className="badge badge-secondary">NEW</div> */}
@@ -39,7 +39,7 @@ const WhatWeDoSection = () => {
               className="object-cover w-full h-full"
             />
           </figure>
-          <div className="card-body">
+          <div className="card-body items-center text-center">
             <h2 className="card-title">
               Data Collection
               {/* <div className="badge badge-secondary">NEW</div> */}
@@ -65,7 +65,7 @@ const WhatWeDoSection = () => {
               className="object-cover w-full h-full"
             />
           </figure>
-          <div className="card-body">
+          <div className="card-body items-center text-center">
             <h2 className="card-title">
               Arm Visual Servoing
               {/* <div className="badge badge-secondary">NEW</div> */}
@@ -90,7 +90,7 @@ const WhatWeDoSection = () => {
               className="object-cover w-full h-full"
             />
           </figure>
-          <div className="card-body">
+          <div className="card-body items-center text-center">
             <h2 className="card-title">
               Arm Torque Sensing
               {/* <div className="badge badge-secondary">NEW</div> */}
