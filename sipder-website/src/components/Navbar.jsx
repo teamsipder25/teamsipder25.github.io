@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -15,49 +18,61 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4 relative flex justify-between items-center">
         {/* Logo */}
         <a href="/" class="avatar w-40 rounded">
-          <img src="../imgs/SIPDERLogo_V1_transparent.png" />
+          <img src="../imgs/SIPDERLogo_V1_transparent_body.png" />
         </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 flex justify-between items-center">
           <ul className="flex space-x-4">
             <li>
-              <Link to="/" className="block py-2 px-6 border-b hover:text-blue-500">
-                Home
-              </Link>
+              <motion.div
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 1 },
+                }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Link to="/" className="block py-2 px-6 border-b hover:text-blue-500">
+                  Home
+                </Link>
+              </motion.div>
             </li>
             <li>
-              <a
-                href="#about"
+              <motion.a
+                href="#mission"
                 onClick={(e) => {
                   e.preventDefault();
-                  const section = document.getElementById("about");
-                  if (section) {
-                    section.scrollIntoView({ behavior: "smooth", block: "start" });
+                  if (location.pathname !== "/") {
+                    navigate("/#mission"); // this triggers location change
+                  } else {
+                    const section = document.getElementById("mission");
+                    if (section) {
+                      section.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
                   }
                 }}
                 className="block py-2 px-6 border-b hover:text-blue-500"
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 1 },
+                }}
+                whileTap={{ scale: 0.9 }}
               >
-                About
-              </a>
+                Mission
+              </motion.a>
             </li>
             <li>
-              <Link to="/services" className="block py-2 px-6 border-b hover:text-blue-500">
-                Services
-              </Link>
-            </li>
-            <li>
+            <motion.div
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 1 },
+                }}
+                whileTap={{ scale: 0.9 }}
+              >
               <Link to="/team" className="block py-2 px-6 border-b hover:text-blue-500">
                 Team
               </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="block py-2 px-6 border-b hover:text-blue-500">
-                Contact
-              </Link>
-              {/* <a href="#contact" className="block py-2 px-6 border-b hover:text-blue-500">
-                Contact
-              </a> */}
+            </motion.div>
             </li>
           </ul>
         </div>
@@ -73,23 +88,42 @@ const Navbar = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="absolute top-full left-0 w-full md:hidden bg-gray-600 border-t shadow-md"
+          className="top-full left-0 w-full md:hidden bg-black border-t shadow-md"
         >
-          <Link tp="/" className="block py-2 px-6 border-b" onClick={toggleMenu}>
+          <Link to="/" className="block py-1 px-6 border-b" onClick={toggleMenu}>
             Home
           </Link>
-          <Link to="/about" className="block py-2 px-6 border-b" onClick={toggleMenu}>
-            About
-          </Link>
-          <Link to="/team" className="block py-2 px-6 border-b" onClick={toggleMenu}>
+          <motion.a
+            href="#mission"
+            onClick={(e) => {
+              e.preventDefault();
+              if (location.pathname !== "/") {
+                navigate("/#mission"); // this triggers location change
+              } else {
+                const section = document.getElementById("mission");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }
+            }}
+            className="block py-2 px-6 border-b hover:text-blue-500"
+            whileHover={{
+              scale: 1.2,
+              transition: { duration: 1 },
+            }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Mission
+          </motion.a>
+          <Link to="/team" className="block py-1 px-6 border-b" onClick={toggleMenu}>
             Team
           </Link>
-          <Link to="/services" className="block py-2 px-6 border-b" onClick={toggleMenu}>
+          {/* <Link to="/services" className="block py-1 px-6 border-b" onClick={toggleMenu}>
             Services
-          </Link>
-          <Link to="/contact" className="block py-2 px-6" onClick={toggleMenu}>
+          </Link> */}
+          {/* <Link to="/contact" className="block py-1 px-6" onClick={toggleMenu}>
             Contact
-          </Link>
+          </Link> */}
         </motion.div>
       )}
     </nav>

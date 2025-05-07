@@ -6,10 +6,20 @@ import { motion } from "framer-motion";
 import Card from "../components/ui/Card";
 import CardContent from "../components/ui/CardContent";
 import AboutPage from "../components/AboutSection";
+import OurSponsers from "../components/OurSponsers";
+import WhatWeDoSection from "../components/WhatWeDoSection";
+
+const pageVariants = {
+  initial: { opacity: 0, x: -50 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 50 },
+};
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
+  const aboutRef = useRef(null);
+  const whatToDoRef = useRef(null);
+  const teamRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,17 +31,31 @@ const Home = () => {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+    if (whatToDoRef.current) {
+      observer.observe(whatToDoRef.current);
+    }
+    if (teamRef.current) {
+      observer.observe(teamRef.current);
     }
 
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (aboutRef.current) observer.unobserve(aboutRef.current);
+      if (whatToDoRef.current) observer.unobserve(whatToDoRef.current);
+      if (teamRef.current) observer.unobserve(teamRef.current);
     };
   }, []);
 
   return (
-    <>
+    <motion.div
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 1.3 }}
+    >
       {/* <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white py-6 px-6"> */}
       <div className="flex flex-col md:flex-row items-center justify-center min-h-0 text-white py-6 px-6 gap-10">
         <div>
@@ -52,22 +76,13 @@ const Home = () => {
             <img src="../imgs/SIPDERLogo_V1_transparent.png" />
           </motion.div>
           <motion.p
-            className="text-lg text-gray-300 text-center max-w-2xl mb-6"
+            className="text-2xl font-bold text-gray-300 text-center max-w-2xl mt-4 mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             Substation Inspection and Partial Discharge Evaluation Robot
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <button className="px-6 py-3 text-lg rounded-2xl bg-blue-500 hover:bg-blue-600 transition-all">
-              Get Started
-            </button>
-          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -78,11 +93,11 @@ const Home = () => {
         </div>
         <div>
           <motion.img
-            src="../imgs/IMG_7731.JPG"
+            src="../imgs/DSCF2004.JPG"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="w-200"
+            className="w-200 rounded rounded-2xl"
           />
           {/* <img src="../imgs/SIPDERLogo_V1_transparent.png" /> */}
         </div>
@@ -91,8 +106,8 @@ const Home = () => {
       <div className="flex flex-col md:flex-row items-center justify-center min-h-0 text-white py-6 px-6 gap-10">
         <div>
           <motion.section
-            id="about"
-            ref={sectionRef}
+            id="mission"
+            ref={aboutRef}
             className={`transition-opacity py-4 duration-1000 ${
               isVisible ? "opacity-100" : "opacity-0"
             }`}
@@ -111,7 +126,31 @@ const Home = () => {
           </motion.div>
         </div> */}
       </div>
-    </>
+
+      <div>
+        <motion.section
+          id="what-we-do"
+          ref={whatToDoRef}
+          className={`transition-opacity py-4 duration-1000 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <WhatWeDoSection />
+        </motion.section>
+      </div>
+
+      <div>
+        <motion.section
+          id="sponsers"
+          ref={teamRef}
+          className={`transition-opacity py-4 duration-1000 ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <OurSponsers />
+        </motion.section>
+      </div>
+    </motion.div>
   );
 };
 

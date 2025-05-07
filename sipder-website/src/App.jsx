@@ -4,10 +4,12 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 // Imported pages
 import Home from "./pages/Home";
 import TeamPage from "./pages/TeamPage";
+import Footer from "./components/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,10 +18,14 @@ function App() {
     <>
       <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/team" element={<TeamPage />} />
-      </Routes>
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/team" element={<TeamPage />} />
+        </Routes>
+      </AnimatePresence>
+
+      <Footer />
     </>
   );
 }

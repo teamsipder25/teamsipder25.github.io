@@ -12,7 +12,7 @@ function AboutPage() {
 
   return (
     <div className="border-t p-4">
-      <h2 className="text-xl font-semibold">About</h2>
+      <h2 className="text-3xl font-semibold">Mission</h2>
       <p className="text-gray-400 mt-2">{description}</p>
     </div>
   );
